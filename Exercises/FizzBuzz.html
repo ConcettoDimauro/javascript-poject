@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="scripts/style.css">
+    <button onclick="fizzBuzz()">Click me to FizzBuzz</button>
+
+    <input type="number" id="fizzBuzzinput" placeholder="give me a number "> </input>
+    <input type="string" id="fizzBuzzinput2" placeholder="give me a fizz"> </input>
+    <input type="string" id="fizzBuzzinput3" placeholder="give me a buzz"> </input>
+    <button onclick="newFizzBuzz()">Click</button>
+
+</body>
+<script>
+    function newFizzBuzz() {
+        var fizzBuzzinput = parseInt(document.getElementById("fizzBuzzinput").value);
+        var fizzBuzzinput2 = (document.getElementById("fizzBuzzinput2").value);
+        var fizzBuzzinput3 = (document.getElementById("fizzBuzzinput3").value);
+        for (var i = 1; i <= fizzBuzzinput; i++) {
+            if (i % 15 == 0)
+                document.write(fizzBuzzinput2, fizzBuzzinput3);
+
+            else if (i % 3 == 0)
+                document.write(fizzBuzzinput2);
+
+            else if (i % 5 == 0)
+                document.write(fizzBuzzinput3);
+
+            else
+                document.write(i)
+        }
+    }
+
+    function fizzBuzz() {
+        for (var i = 1; i <= 100; i++) {
+            if (i % 15 == 0)
+                document.write("FizzBuzz");
+
+            else if (i % 3 == 0)
+                document.write("Fizz");
+
+            else if (i % 5 == 0)
+                document.write("Buzz");
+
+            else
+
+                document.write(i)
+
+
+        }
+    }
+
+</script>
+
+
+
+</html>
