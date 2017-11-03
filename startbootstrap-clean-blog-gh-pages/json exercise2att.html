@@ -1,6 +1,5 @@
 <body>
-    <input type="string" id="searchQuery"=> Search box </input>
-    <button onclick="kingLoop()">Click me to search for a king</button>
+  <b> <input type="string" id="searchQuery" onkeyup="kingLoop()" > Search For a king </input></b>
     <p id="key" style="text-align:center;"></p>
     <link rel="stylesheet" type="text/css" href="scripts/style.css">
 
@@ -24,6 +23,7 @@
                 let para = document.getElementById("key");
                 para.innerHTML = "";
 
+
                 for (let i = 0; i < requestData.length; i++) {
                     for (let key in requestData[i]) {
                         if (requestData[i][key].toUpperCase().includes(searchQuery)) {
@@ -32,13 +32,10 @@
                             console.log(requestData[i].cty);
                             console.log(requestData[i].yrs);
                             para.innerHTML += requestData[i].nm + requestData[i].hse + requestData[i].cty + requestData[i].yrs + "<br>";
-
+                            break;
                         }
 
                     }
-
-
-
                 }
             }
 
