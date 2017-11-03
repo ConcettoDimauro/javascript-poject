@@ -16,7 +16,11 @@
         
 
         for (let i = 0; i < memberTable.length; i++){
-            heroTable.textContent += requestData['members'] [i] ['name'];
+            
+            heroTable.textContent += requestData['members'] [i] ['name']; 
+            heroTable.textContent += requestData['members'] [i] ['age'];
+            heroTable.textContent += requestData['members'] [i] ['secretIdentity'];
+            heroTable.textContent += requestData['members'] [i] ['powers'];
         }
 
         
@@ -24,5 +28,7 @@
         document.getElementsByTagName('body') [0].appendChild(myH1);
         document.getElementsByTagName('body') [0].appendChild(heroTable);
     }
+   
+
 </script>
 </body>
