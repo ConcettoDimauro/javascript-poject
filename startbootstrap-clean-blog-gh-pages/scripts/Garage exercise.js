@@ -43,21 +43,21 @@ function getGarageContents() {
     let para = document.getElementById("results");
     para.innerHTML = "";
     if (searchQuery == "") {
-        para.innerHTML = "enter something dairylea dipshit";
+        para.innerHTML = "Please enter a Registration plate";
 
     }
     else {
 
 
         for (let i = 0; i < carlist.length; i++) {
-            //console.log(carlist[i][key].toString().toUpperCase());
             if (carlist[i].reg.toUpperCase().includes(searchQuery.toUpperCase())) {
                 console.log(carlist[i].reg);
                 console.log(carlist[i].make);
                 console.log(carlist[i].year);
                 console.log(carlist[i].faults);
                 console.log(carlist[i].checkedIn);
-                para.innerHTML += carlist[i].reg + carlist[i].make + carlist[i].year + carlist[i].faults + carlist[i].checkedIn + "<br>";
+
+                para.innerHTML += carlist[i].reg + " " + carlist[i].make + " " + carlist[i].year + " " + carlist[i].faults + "<br>";
 
             }
 
@@ -68,12 +68,34 @@ function getGarageContents() {
 }
 
 function checkoutCar() {
+    let searchCheckout = document.getElementById("searchCheckout").value;
+    let para = document.getElementById("alerts")
+    for (let i = 0; i < carlist.length; i++) {
+        if (carlist[i].reg.toUpperCase() == (searchCheckout.toUpperCase())) {
+            carlist[i].checkedIn = false
+            para.innerHTML = "The car has been checked out";
+            break;
+        }
+        else {
+            para.innerHTML = "This registration plate is not in the garage";
+        }
+    }
+}
+
+function sumUpBill() {
+    let sumUp = document.getElementById("sumUp").value;
+    let para = document.getElementById("bill");
+    const faultCost = 50;
+
 
     for (let i = 0; i < carlist.length; i++) {
-        if (carlist[i].reg.toUpperCase().includes(searchQuery.toUpperCase())) {
-            carlist[i].checkedIn = false
+        if (carlist[i].reg.toUpperCase() == (sumUp.toUpperCase())) {
+            para.innerHTML = "The bill for this car is &pound" + (carlist[i].faults * faultCost);
+            break;
         }
-
+        else {
+            para.innerHTML = "This reg is not in the garage"
+        }
 
 
 

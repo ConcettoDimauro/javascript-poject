@@ -11,14 +11,31 @@
     <input type="string" id="reg" placeholder="enter the reg"></input>
     <input type="string" id="make" placeholder="enter the make"></input>
     <input type="string" id="year" placeholder="enter the year"></input>
-    <input type="string" id="faults" placeholder="Enter any faults"></input>
+    <input type="string" id="faults" placeholder="Enter amount of faults"></input>
     <input type="checkbox" id="checkedIn" .checked>check in car</input>
     <button onclick="createNewcar()">Submit</button>
     <h1> Search a car by reg plate</h1>
     <input type="string" id="searchQuery" placeholder="Reg Search"> </input>
     <button onclick="getGarageContents()">Find </button>
+    <h1> Check a car out by the reg</h1>
 
-    <div> <p id="results"> </p> </div>
+    <input type="string" id="searchCheckout" placeholder="Checkout a car by its reg"> </input>
+    <button onclick="checkoutCar()"> Click</button>
+
+    <h1> Sum up the bill for a car by its reg plate</h1>
+    <input type="string" id="sumUp" placeholder="Get a cars bill by its reg"> </input>
+    <button onclick="sumUpBill()">Bill up bitch</button>
+
+
+    <div>
+        <p id="results"> </p>
+    </div>
+    <div>
+        <p id="bill"> </p>
+    </div>
+    <div id="alerts">
+        <p id="alerts"> </p>
+    </div>
 
 
 
